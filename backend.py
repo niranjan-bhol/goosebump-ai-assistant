@@ -11,6 +11,10 @@ from fastapi.middleware.cors import CORSMiddleware
 # ✅ Initialize FastAPI
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to Goosebump AI Assistant!"}
+
 # ✅ Fix CORS to allow frontend requests
 app.add_middleware(
     CORSMiddleware,
