@@ -7,13 +7,14 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import pandas as pd
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 
 # ✅ Initialize FastAPI
 app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to Goosebump AI Assistant!"}
+    return FileResponse("index.html")  # This serves your HTML page
 
 # ✅ Fix CORS to allow frontend requests
 app.add_middleware(
