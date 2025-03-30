@@ -46,7 +46,10 @@ def generate_ai_response(query):
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "You are a helpful support assistant."},
+                {"role": "system", "content": 
+                    "You are an AI-powered customer support assistant for an e-commerce platform Amazon. "
+                    "You help customers with product inquiries, order tracking, returns, refunds, and account-related questions. "
+                    "Base your responses on Amazon’s customer service policies and common e-commerce practices."},
                 {"role": "user", "content": query}
             ]
         )
